@@ -1,0 +1,10 @@
+opencv-python
+opencv-contrib-python
+readchar
+soundfile
+sounddevice
+numpy
+ray
+subprocess32
+pyautogui
+natsort 
