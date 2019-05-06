@@ -8,3 +8,4 @@ ray
 subprocess32
 pyautogui
 natsort 
+pyobjc
