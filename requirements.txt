@@ -10,3 +10,4 @@ pyautogui
 natsort 
 pyobjc
 psutil
+setproctitle
