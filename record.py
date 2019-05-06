@@ -147,10 +147,15 @@ def screen_record(filename, duration):
 		shutil.rmtree(foldername)
 		os.mkdir(foldername)
 		os.chdir(foldername)
-		
-	for i in range(duration):
-		pyautogui.screenshot(str(i)+".png")
-		time.sleep(0.5)
+	
+	start_time=time.time()
+	count=0
+	while True:
+		if time.time()-start_time < duration:
+			pyautogui.screenshot(str(count)+".png")
+			count=count+1
+		else:
+			break
 
 	# this will record 1 screenshot per time 
 	files=natsorted(os.listdir())
@@ -176,7 +181,7 @@ def screen_record(filename, duration):
 	os.remove(newfilename)
 
 	vid_duration=calc_duration(newfilename[0:-4]+'.mp4')
-	speedfactor=20/vid_duration
+	speedfactor=duration/vid_duration
 	print(speedfactor)
 	os.system('ffmpeg -i %s -filter:v "setpts=%s*PTS" %s'%(newfilename[0:-4]+'.mp4', str(speedfactor), newfilename[0:-4]+'_2.mp4'))
 	os.remove(newfilename[0:-4]+'.mp4')
@@ -284,7 +289,7 @@ os.system('ffmpeg -i %s -vf scale=640:360 %s -hide_banner'%(filename[0:-4]+'_scr
 
 # combine 
 os.system('ffmpeg -i %s -i %s -filter_complex hstack output.mp4'%(one, two))
-os.system('open output.mp4')
+#os.system('open output.mp4')
 
 # remove temp files and rename
 os.remove(one)
