@@ -16,3 +16,6 @@ Now you can run main script (record for 60 seconds).
 ```
 python3 record.py test.avi 60
 ```
+
+## resources
+* [ffmpeg]()
