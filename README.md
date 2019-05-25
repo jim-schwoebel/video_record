@@ -9,6 +9,8 @@ I created this script because I found few solutions that could seamlessly connec
 
 Therefore, I looked deeper at the problem and it seemed like you could use Redis (using [ray](https://github.com/ray-project/ray)) or a similar distributed cue to record parallel instances of all the channels desired (audio, video, keyboard typing, mouse clicks, and computer screen recordings). Then, you could use packages like FFmpeg to merge the various channels. You can also use custom thresholding to make sure the audio and video are aligned. 
 
+![]()
+
 ## Getting started
 
 To get started, you can create a virtual environment and install all dependencies.
