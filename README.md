@@ -9,6 +9,10 @@ I created this script because I found few solutions that could seamlessly connec
 
 Therefore, I looked deeper at the problem and it seemed like you could use Redis (using [ray](https://github.com/ray-project/ray)) or a similar distributed cue to record parallel instances of all the channels desired (audio, video, keyboard typing, mouse clicks, and computer screen recordings). Then, you could use packages like FFmpeg to merge the various channels. You can also use custom thresholding to make sure the audio and video are aligned. 
 
+## Live demo
+
+Click on the image below to see a live demo of a recorded screencast! 
+
 ![](https://github.com/jim-schwoebel/video_record/blob/master/screenshot.png)
 
 ## Getting started
