@@ -1,4 +1,4 @@
-import sys, os, cv2, time, readchar
+import sys, os, cv2, time, readchar, datetime
 import soundfile as sf 
 import sounddevice as sd 
 import numpy as np
@@ -72,25 +72,25 @@ def calc_duration(vid_file_path):
 
 @ray.remote
 def mouse(filename, duration):
-    print('recording mouse movements')
-    print('--> mouse_%s.json'%(filename[0:-4]))
-    # get features from the mouse to detect activity
-    deltat=.1
-    pyautogui.PAUSE = 1
-    pyautogui.FAILSAFE = True
-    positions=list()
-    
-    #log 20 mouse movements
-    for i in range(0, duration):
-        curpos=pyautogui.position()
-        positions.append(curpos)
+	print('recording mouse movements')
+	print('--> mouse_%s.json'%(filename[0:-4]))
+	# get features from the mouse to detect activity
+	deltat=.1
+	pyautogui.PAUSE = 1
+	pyautogui.FAILSAFE = True
+	positions=list()
 
-    jsonfile=open('mouse_%s.json'%(filename[0:-4]),'w')
-    data={'mouse_positions':positions}
-    json.dump(data,jsonfile)
-    jsonfile.close()
+	#log 20 mouse movements
+	for i in range(0, duration):
+	    curpos=pyautogui.position()
+	    positions.append(curpos)
 
-    return positions
+	jsonfile=open('mouse_%s.json'%(filename[0:-4]),'w')
+	data={'mouse_positions':positions}
+	json.dump(data,jsonfile)
+	jsonfile.close()
+
+	return positions
 
 @ray.remote
 def keyboard(filename, duration):
@@ -224,13 +224,14 @@ def video_record(filename, duration):
 
 @ray.remote 
 def audio_record(filename, duration):
-    print('recording audio (.WAV)')
-    print('--> '+filename)
-    fs=44100
-    channels=2
-    myrecording = sd.rec(int(duration * fs), samplerate=fs, channels=channels)
-    sd.wait()
-    sf.write(filename, myrecording, fs)
+	print('recording audio (.WAV)')
+	print('--> '+filename)
+	time.sleep(0.50)
+	fs=44100
+	channels=2
+	myrecording = sd.rec(int(duration * fs), samplerate=fs, channels=channels)
+	sd.wait()
+	sf.write(filename, myrecording, fs)
 
 def video_audio_record(videofile, duration):
 	# record each in parallel 
