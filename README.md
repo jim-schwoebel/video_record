@@ -1,6 +1,8 @@
 # video_record
 This is a repository for recording videos alongside screen information on mac computers. Audio, video, keyboard typing, mouse clicks, and computer screens are all recorded in parallel, and a video is created from the captured webcam/microphone (with audio/video streams connected) and the computer screen. 
 
+![](https://media.giphy.com/media/3tGUlL7jKLhkupHvQa/giphy.gif)
+
 ## Why I created this repository
 
 I created this script because I found few solutions that could seamlessly connect audio, video, and screen information written in Python. Most of the repositories out there record only one stream like an audio stream (e.g. [sounddevice](https://python-sounddevice.readthedocs.io/en/0.3.12/)) or video stream (e.g. [OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html)). Moreover, this seemed like a difficult task because if you recorded many of these streams in parallel the timing may be off with the lips to the audio if you merged the two recordings.
