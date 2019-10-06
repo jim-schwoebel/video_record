@@ -228,7 +228,7 @@ def audio_record(filename, duration):
 	print('--> '+filename)
 	time.sleep(0.50)
 	fs=44100
-	channels=2
+	channels=1
 	myrecording = sd.rec(int(duration * fs), samplerate=fs, channels=channels)
 	sd.wait()
 	sf.write(filename, myrecording, fs)
