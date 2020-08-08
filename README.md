@@ -32,6 +32,8 @@ Now you can run main script. There are two arguments - the file name ('test.avi'
 python3 record.py test.avi 60
 ```
 
+Note that you may need to grant permission in the terminal for newer versions of Mac operating systems.
+
 ## Feedback
 Any feedback this repository is greatly appreciated. 
 * If you find something that is missing or doesn't work, please consider opening a [GitHub issue](https://github.com/jim-schwoebel/video_record/issues).
