@@ -13,7 +13,7 @@ Therefore, I looked deeper at the problem and it seemed like you could use Redis
 
 Click on the image below to see a live demo of a recorded screencast! 
 
-[![](https://github.com/jim-schwoebel/video_record/blob/master/screenshot.png)](https://drive.google.com/file/d/1fxiUBqNQwQoXPeFPQ33A9AuNEJLWYGHA/view?usp=sharing)
+![https://drive.google.com/file/d/1fxiUBqNQwQoXPeFPQ33A9AuNEJLWYGHA/view?usp=sharing](https://github.com/jim-schwoebel/video_record/blob/master/screenshot.png)
 
 ## Getting started
 
