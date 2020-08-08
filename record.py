@@ -284,12 +284,12 @@ one=newfilename2[0:-4]+'_.mp4'
 two=filename[0:-4]+'_screenshots_2.mp4'
 
 #resize video 1 
-os.system('ffmpeg -i %s -vf scale=640:360 %s -hide_banner'%(newfilename2, one))
+os.system('ffmpeg -i %s -vf scale=640:360 %s -hide_banner -preset ultrafast -framerate 30 -vf mpdecimate -c:a copy -vsync vfr'%(newfilename2, one))
 # resize video 2 
-os.system('ffmpeg -i %s -vf scale=640:360 %s -hide_banner'%(filename[0:-4]+'_screenshots.mp4', two))
+os.system('ffmpeg -i %s -vf scale=640:360 %s -hide_banner -preset ultrafast -framerate 30 -vf mpdecimate -c:a copy -vsync vfr'%(filename[0:-4]+'_screenshots.mp4', two))
 
 # combine 
-os.system('ffmpeg -i %s -i %s -filter_complex hstack output.mp4'%(one, two))
+os.system('ffmpeg -i %s -i %s -filter_complex hstack output.mp4 -preset ultrafast -framerate 30 -vf mpdecimate -c:a copy -vsync vfr'%(one, two))
 #os.system('open output.mp4')
 
 # remove temp files and rename
