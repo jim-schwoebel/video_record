@@ -11,3 +11,4 @@ natsort
 pyobjc
 psutil
 setproctitle
+pymsgbox==1.0
