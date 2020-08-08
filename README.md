@@ -23,7 +23,7 @@ git clone git@github.com:jim-schwoebel/video_record.git
 cd video_record
 python3 -m venv video_record
 source video_record/bin/activate
-pip3 install -r requirements.txt 
+sudo pip3 install -r requirements.txt 
 ```
 
 Now you can run main script. There are two arguments - the file name ('test.avi') and the number of seconds that you wish to record (60):
