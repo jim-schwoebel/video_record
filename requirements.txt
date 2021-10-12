@@ -1,5 +1,5 @@
 opencv-python==3.4.2.16
-opencv-contrib-python==3.4.2.16
+opencv-contrib-python==4.2.0.32
 readchar==2.0.1
 soundfile==0.10.3.post1
 sounddevice==0.4.0
